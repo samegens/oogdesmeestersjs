@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pak mes, dood monster - voorbeeld</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/site-specific.css" />
+<script language="javascript" type="text/javascript" src="js/lib/require.min.js" data-main="js/app"></script>
+</head>
+<body ng-controller="GameController as game">
+<h1>Mini avontuur</h1>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-8">	<!-- Adventure text -->
+<div class="par par1">
+Er staat hier een monster. <span data-show="mesGepakt > 0">Je kunt het monster nu <a ng-click="par(2)">aanvallen</a>.</span>
+<div data-show="mesGepakt == 0">
+	Er ligt hier een mes, dat kun je <a ng-click="weapon('mes', 1, 2);par(1, 'mesGepakt')">oppakken</a>.
+</div>
+</div>
+
+<div class="par par2">
+Je hebt het monster gedood, de wereld is gered, gefeliciteerd!
+</div>
+
+</div>	<!-- col adventure text -->
+
+<div class="col-sm-4">
+</div>
+
+</div>	<!-- row -->
+</div>	<!-- container -->
+
+</body>
+</html>

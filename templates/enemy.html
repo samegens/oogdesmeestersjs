@@ -1,0 +1,26 @@
+<div class="col-sm-6">
+	<div class="enemy">
+		<div class="enemyTableSpacer">
+			<table>
+				<tr>
+					<td class="enemyName">{{enemy.name}}</td><td><button type="button" ng-click="attackEnemy()" ng-show="canAttackEnemy()">Val aan</button></td>
+				</tr>
+				<tr>
+					<td>Levensenergie:</td><td>{{enemy.hp}}</td>
+				</tr>
+				<tr>
+					<td>Aanval:</td><td>{{enemy.attackStat}}</td>
+				</tr>
+				<tr>
+					<td>Afweer:</td><td>{{enemy.defenceStat}}</td>
+				</tr>
+				<tr>
+					<td>Wapen:</td><td>{{enemy.weapon.name}}, {{enemy.weapon.getDamageDescription()}}</td>
+				</tr>
+				<tr>
+					<td>Uitrusting:</td><td>{{enemy.armor.toString()}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

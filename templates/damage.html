@@ -1,0 +1,6 @@
+<div class="negativeEvent">
+	<h3>Verwonding</h3>
+	<button type="button" ng-click="roll()" ng-show="canShow()">Dobbel</button>
+	<span>{{rollResult}}</span>
+	<div ng-show="canShowContinueMessage()" ng-transclude></div>
+</div>

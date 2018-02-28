@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Voorbeelden</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/site-specific.css" />
+<script language="javascript" type="text/javascript" src="js/lib/require.min.js" data-main="js/app"></script>
+</head>
+<body ng-controller="GameController as game">
+<h1>Voorbeelden</h1>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-8">	<!-- Adventure text -->
+<div class="par par1">
+Paragraaf 1. Dit is altijd de start. Deze paragraaf laat zien hoe je naar verschillende andere paragrafen springt.
+<ul>
+	<li><a ng-click="par(2)">demonstreer het tonen van stukken tekst afhankelijk van de waarde van een variabele.</a></li>
+	<li><a ng-click="par(4)">demonstreer een gelijk gevecht.</a></li>
+	<li><a ng-click="par(5)">demonstreer een makkelijk gevecht met meerdere vijanden.</a></li>
+	<li><a ng-click="par(6)">demonstreer een moeilijk gevecht.</a></li>
+	<li><a ng-click="par(18)">demonstreer een gevecht met een spiegel demon.</a></li>
+	<li><a ng-click="par(19)">demonstreer een gevecht met een spiegel demon met een schild.</a></li>
+	<li><a ng-click="par(20)">demonstreer een gevecht met een monster met een magische dolk.</a></li>
+	<li><a ng-click="par(9)">demonstreer het toebrengen van schade door te dobbelen.</a></li>
+	<li><a ng-click="par(10)">demonstreer het stuk slaan van een slot.</a></li>
+	<li><a ng-click="par(11)">demonstreer het oplopen van een vaste schade.</a></li>
+	<li><a ng-click="par(12)">demonstreer het geven van een ander wapen.</a></li>
+	<li><a ng-click="par(13)">demonstreer het geven van een stuk uitrusting.</a></li>
+	<li><a ng-click="par(14)">demonstreer het herstellen van alle levensenergie.</a></li>
+	<li><a ng-click="par(15)">demonstreer het forceren van een deur.</a></li>
+	<li><a ng-click="par(16)">demonstreer het uitvoeren van een behendigheidsproef.</a></li>
+	<li><a ng-click="par(17)">demonstreer het voodoo schild.</a></li>
+</ul>
+</div>
+
+<div class="par par2">
+Dit is paragraaf 2. Door naar <a ng-click="par(3, 'aantal')">paragraaf 3</a> te springen wordt de variabele 'aantal' opgehoogd.
+<br/><br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par3">
+Dit is paragraaf 3. Hieronder wordt afhankelijk van de waarde van de variabele 'aantal' een bepaalde tekst getoond:
+<div data-show="aantal == 1">
+	Dit is de eerste keer dat je paragraaf 3 ziet.
+</div>
+<div data-show="aantal == 2">
+	Dit is de tweede keer dat je paragraaf 3 ziet.
+</div>
+<div data-show="aantal > 2">
+	Je hebt paragraaf 3 al meer dan twee keer gezien.
+</div>
+
+<br/>
+<a ng-click="par(2)">Terug naar paragraaf 2.</a>
+</div>
+
+<div class="par par4">
+Dit is paragraaf 4. Hieronder start je een gelijk gevecht. 
+<fight win-par="7" lose-par="8">
+	<enemy name="Alrik 2" hp="30" attack="11" defence="8" weapon-name="knuppel" weapon-dice="1" weapon-modifier="2"></enemy>
+</fight>
+<br/><br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par5">
+Dit is paragraaf 5. Hieronder start je een makkelijk gevecht. 
+<fight win-par="7" lose-par="8">
+	<enemy name="rat 1" hp="2" attack="1" defence="1" weapon-name="staart" weapon-dice="0" weapon-modifier="1"></enemy>
+	<enemy name="rat 2" hp="2" attack="1" defence="1" weapon-name="staart" weapon-dice="0" weapon-modifier="1"></enemy>
+	<enemy name="rat 3" hp="2" attack="1" defence="1" weapon-name="staart" weapon-dice="0" weapon-modifier="1"></enemy>
+	<enemy name="rat 4" hp="2" attack="1" defence="1" weapon-name="staart" weapon-dice="0" weapon-modifier="1"></enemy>
+</fight>
+<br/><br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par6">
+Dit is paragraaf 6. Hieronder start je een moeilijk gevecht. 
+<fight win-par="7" lose-par="8">
+	<enemy name="Draak" hp="7500" attack="19" defence="19" weapon-name="vuuradem" weapon-dice="10" weapon-modifier="50"></enemy>
+</fight>
+<br/><br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par7">
+Je hebt het gevecht gewonnen!
+<br/><br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par8">
+Je hebt het gevecht verloren!
+<br/><br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par9">
+Paragraaf 9. Hieronder moet je dobbelen, het resultaat wordt afgetrokken van je levenspunten.
+<damage dice="1" modifier="0">
+	<damage-live><a ng-click="par(1)" href="#">Terug naar paragraaf 1.</a></damage-live>
+	<damage-die>
+		<div class="negativeResult">
+			Je hebt het niet overleefd, <a ng-click="par(1)">ga verder</a>.
+		</div>
+	</damage-die>
+</damage>
+</div>
+
+<div class="par par10">
+Paragraaf 10. Hieronder kun je proberen met je wapen een slot stuk te slaan.
+<attack-lock>
+	<lock-opened>
+		<div class="positiveResult">
+			Je hebt het slot er af geslagen, <a ng-click="par(1)">ga verder</a>.
+		</div>
+	</lock-opened>
+	<weapon-broken>
+		<div class="negativeResult">
+			Je hebt je wapen kapot geslagen. Je vecht nu met je vuisten, hierdoor is je aanvalsscore verlaagd naar 7, je afweerscore is nu 0.
+			De schade die je met je vuisten toebrengt is verlaagd naar 1D-2.
+			<a ng-click="par(1)">Ga verder</a>.
+		</div>
+	</weapon-broken>
+</attack-lock>
+</div>
+
+<div class="par par11">
+Paragraaf 11. Iedere keer dat je op de link hieronder klikt raak je 2 levenspunten kwijt.<br/>
+<a ng-click="dmg(2)">Raak 2 levenspunten kwijt.</a><br/>
+<br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par12">
+Paragraaf 12. Als je op de link klikt krijg je een nieuw wapen (zwaard, 1D+4).<br/>
+<a ng-click="weapon('zwaard', 1, 4)">Pak zwaard.</a><br/>
+<br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par13">
+Paragraaf 13. Als je op de link klikt krijg je een stuk uitrusting (schild, 1 BW).<br/>
+<a ng-click="armor('het', 'schild', 1)">Pak schild.</a><br/>
+<br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par14">
+Paragraaf 14. Als je op de link klikt krijg je alle levensenergie terug.<br/>
+<a ng-click="restoreHP()">Herstel levensenergie.</a><br/>
+<br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par15">
+Paragraaf 15. Hieronder kun je proberen een deur te forceren.
+Als je de deur wilt openbreken, rol je de twintigzijdige dobbelsteen. 
+Je mag hoogstens een 10 gooien, dan lukt de krachtproef en springt de deur open. 
+Als je meer dan 10 gooit, is de proef mislukt. 
+In dit geval moet je 1 punt van uw levensenergie aftrekken, omdat je je schouder hebt gekneusd. 
+Als je een tweede keer tegen de deur aanbeukt en deze poging mislukt ook, dan moet je nog twee punten van je levensenergie aftrekken; 
+voor de derde poging 3 punten, voor de vierde 4 punten, enz.
+<force-door>
+	<div class="positiveResult">Gelukt! De deur is open, <a ng-click="par(1)">ga verder</a>.</div>
+</force-door>
+<br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par16">
+Paragraaf 16. Hieronder kun je een behendigheidsproef uitvoeren.
+<check>
+	<check-succeeded>
+		<div class="positiveResult">
+			Proef is gelukt, <a ng-click="par(1)">ga verder</a>.
+		</div>
+	</check-succeeded>
+	<check-failed>
+		<div class="negativeResult">
+			Proef is mislukt, <a ng-click="par(1)">ga verder</a>.
+		</div>
+	</check-failed>
+</check>
+</div>
+
+<div class="par par17">
+Paragraaf 17. <a ng-click="armor('het', 'voodoo schild', 4, 'voodooSchild')">Klik hier</a> om een voodoo schild te krijgen.
+Dit schild houdt 4 schadepunten tegen en kan een vijand in rook doen oplossen; voor iedere ronde moet een vijand met een zeszijdige dobbelsteen
+gooien. Gooit hij 6, dan lost hij direct op. Je kunt het schild uitproberen in een van de gevechten.</br>
+<br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par18">
+Paragraaf 18. Hieronder start je een gevecht met een spiegel demon. 
+<fight win-par="7" lose-par="8">
+	<enemy name="de demon" special="mirrorDemon"></enemy>
+</fight>
+<br/><br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par19">
+Paragraaf 19. Hieronder start je een gevecht met een spiegel demon met een schild.
+<fight win-par="7" lose-par="8">
+	<enemy name="de demon" special="mirrorDemon" armor-name-prefix="het" armor-name="schild" armor-ap="4"></enemy>
+</fight>
+<br/><br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+<div class="par par20">
+Hieronder start je een gevecht met een kabouter die een magische dolk heeft. Als je wordt geraakt door de dolk en voor het
+aantal trefpunten wordt 1 gedobbeld, dan verander je in een klein gouden figuurtje.
+<fight win-par="7" lose-par="8">
+	<enemy name="de kabouter" hp="15" attack="8" defence="6" weapon-name="dolk" weapon-dice="1" weapon-special="minimizeDagger"></enemy>
+</fight>
+<br/><br/>
+<a ng-click="par(1)">Terug naar paragraaf 1.</a>
+</div>
+
+</div>	<!-- col adventure text -->
+
+<div class="col-sm-4">
+<div  id="playerStats" style="display: none">
+	<table>
+		<tr>
+			<td colspan="2" class="playerName">{{player.name}}</td>
+		</tr>
+		<tr>
+			<td>Levensenergie:</td><td>{{player.hp}}</td>
+		</tr>
+		<tr>
+			<td>Aanval:</td><td>{{player.attackStat}}</td>
+		</tr>
+		<tr>
+			<td>Afweer:</td><td>{{player.defenceStat}}</td>
+		</tr>
+		<tr>
+			<td>Wapen:</td><td>{{player.weapon.name}}, {{player.weapon.getDamageDescription()}}</td>
+		</tr>
+		<tr>
+			<td>Uitrusting:</td><td>{{player.armor.toString()}}</td>
+		</td>
+	</table>
+</div>
+</div>
+
+</div>	<!-- row -->
+</div>	<!-- container -->
+
+</body>
+</html>

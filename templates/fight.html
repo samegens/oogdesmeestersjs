@@ -1,0 +1,9 @@
+<div class="negativeEvent">
+	<h3>Het gevecht</h3>
+	<div ng-transclude class="row"></div>
+	<div ng-repeat="line in roundResults">
+		<div>{{line}}</div>
+	</div>
+	<div ng-show="isWon" class="positiveResult">Gevecht gewonnen! <a ng-click="par(parWinId)">Ga verder.</a></div>
+	<div ng-show="isLost" class="negativeResult">Gevecht verloren! <a ng-click="par(parLoseId)">Ga verder.</a></div>
+</div>

@@ -1,0 +1,158 @@
+@font-face {
+    font-family: "Archive";
+    src: url("../fonts/archive-webfont.woff") format('woff');
+}
+
+@font-face {
+	font-family: "StoryTelling";
+	src: url("../fonts/Story_Telling.woff") format('woff');
+}
+
+body {
+	font-family: 'Times New Roman';
+	font-size: 20px;
+	text-align: justify;
+	color: black;
+	padding-bottom: 15px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2em;
+	font-family: 'Times New Roman';
+	letter-spacing: -1px;
+	line-height: 1em;
+	margin-top: 15px;
+	padding-bottom: 5px;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+	text-align: center;
+	font-size: 1.5em;
+	font-family: 'Times New Roman';
+	letter-spacing: -1px;
+	line-height: 1em;
+	margin-top: 20px;
+	padding-bottom: 5px;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+.par {
+	display: none;
+	border: 1px solid;
+	border-color: #c0c0c0;
+	border-radius: 15px;
+	padding: 15px;
+	background-color: #f4f4f4;
+}
+
+td {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+button {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+}
+
+img {
+	border: 3px solid;
+	border-color: black;
+	border-radius: 3px;
+	display: table-caption;
+	margin: 0 auto;
+}
+
+#playerStats {
+	border: 1px solid;
+	border-color: #c0c0c0;
+	border-radius: 15px;
+	padding: 15px;
+	background-color: #F0FCF0;
+}
+
+#playerStats td {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#playerStats table {
+	width: 100%;
+}
+
+.playerName {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.negativeEvent {
+	border: 1px solid;
+	border-color: #c0c0c0;
+	border-radius: 15px;
+	background-color: #FFF4F4;
+	margin-top: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+}
+
+.positiveResult {
+	padding: 15px;
+	margin-top: 10px;
+	text-align: center;
+	font-size: 1.5em;
+	border: 1px solid;
+	border-color: #c0c0c0;
+	border-radius: 15px;
+	background-color: #87FA87;
+}
+
+.negativeResult {
+	padding: 15px;
+	margin-top: 10px;
+	text-align: center;
+	font-size: 1.5em;
+	border: 1px solid;
+	border-color: #c0c0c0;
+	border-radius: 15px;
+	background-color: #FCBBBB;
+}
+
+.enemy {
+	border: 1px solid;
+	border-color: #c0c0c0;
+	border-radius: 15px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: #FFF0F0;
+}
+
+.enemyName {
+	font-weight: bold;
+}
+
+.enemyTableSpacer {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.neutralEvent {
+	border: 1px solid;
+	border-color: #c0c0c0;
+	border-radius: 15px;
+	background-color: #f0f0f0;
+	margin-top: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+}
+

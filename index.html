@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Oog des Meesters: Boek van Avontuur solo-avontuur</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/site-specific.css" />
+<script language="javascript" type="text/javascript" src="js/lib/require.min.js" data-main="js/app"></script>
+</head>
+<body ng-controller="GameController as game">
+<h1>Oog des Meesters: Boek van Avontuur solo-avontuur</h1>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-8">	<!-- Adventure text -->
+
+<div class="par par1">
+<img src="img/par1.png"></img>
+<br/>
+De    afbeelding   toont   het  trappenhuis    met  het     
+trapportaal  en  de  drie  deuren,  die naar de kamers     
+op  de  eerste verdieping  leiden.  Bovendien de  buitenmuren  van     het  huis.  
+Op   het  ogenblik    staat  u  onderaan    de  trap.  De 
+knuppel in de  ene, de  olielamp in de andere hand.
+<br/>
+<img src="img/par1_trap.png"></img>
+<br/>
+U   kunt  <a ng-click="par(3)">welgemoed  de  trap  opstormen</a>
+of <a ng-click="par(7)">voorzichtig  naar  boven  gaan  en     kijken  of er 
+valstrikken zijn</a>.
+</div>
+
+<div class="par par2">
+Vecht nu volgens de u bekende regels.
+<fight win-par="41" lose-par="4">
+	<enemy name="de beer" hp="50" attack="8" defence="7" weapon-name="2 klauwen" weapon-dice="2" weapon-modifier="0"></enemy>
+</fight>
+</div>
+
+<div class="par par3">
+U   heeft  een  bijna  onzichtbare  draad,  die  over 
+de   bovenste    traptreden    was   gespannen,     kapotgemaakt.
+<br/><br/>
+<a ng-click="par(5)">Ga verder.</a>
+</div>
+
+<div class="par par4">
+U  kunt nu in alle rust de sokkel waarop de beer 
+stond onderzoeken.  Al  spoedig stelt  u vast,  dat  de 
+deksteen  omhoog kan  klappen.  Daaronder ligt de 
+gezochte    perkamentrol.
+<br/><br/>
+Van   harte  gefeliciteerd! 
+</div>
+
+<div class="par par5">
+Op het  moment dat  u het  trapportaal betreedt, 
+klapt een valluik onder uw voeten open, waardoor 
+u  drie  meter  in  de  diepte  stort.  U  gooit  met  een 
+dobbelsteen en  trekt het  resultaat als trefpunten af 
+van  uw   levensenergie. 
+<damage dice="1" modifier="0">
+	<a ng-click="par(13)">U kunt nu de trap op gaan.</a>
+</damage>
+</div>
+
+<div class="par par6">
+U vecht volgens de u 
+bekende  regels.    Iedere  keer  dat  de  beer  succesvol 
+toeslaat,   maar   uw   afweer   mislukt,  gooit  u  twee 
+dobbelstenen.  Het  aantal  ogen  bepaalt  het       aantal 
+trefpunten  dat  de  beer  tegen  u heeft  gehaald.  Let 
+op,  dat  u 4 punten  van  de  trefpunten  van  de  beer 
+mag  aftrekken,  en  dat  de  beer  voor  iedere  ronde 
+een  keer  met  de  dobbelsteen  moet  gooien.  Gooit 
+hij  een  6,  dan   lost hij ter  plekke   op  in  donkerbruine   rook.   Dat  heeft  u  aan  de  toverkracht  van 
+het  schild  te  danken.    
+<fight win-par="4" lose-par="41">
+	<enemy name="de beer" hp="50" attack="8" defence="7" weapon-name="2 klauwen" weapon-dice="2" weapon-modifier="0"></enemy>
+</fight>
+</div>
+
+<div class="par par7">
+U  stelt vast  dat er  over de bovenste treden van 
+de  trap  een  dunne  draad  is gespannen.  Kennelijk 
+om  een val in werking te  stellen.    U  kunt  <a ng-click="par(9)">de  draad 
+van  veilige  afstand   doorslaan</a>  of  <a ng-click="par(17)">er 
+voorzichtig overheen stappen</a>.
+</div>
+
+<div class="par par8">
+<img src="img/par8.png"></img>
+De  beer  gaat  plotseling  leven  en  pakt  u  vast.     
+Zijn   gebrom  is  toegenomen  tot        een  diep   gebrul. 
+<div data-show="heeftSchild > 0">
+	<a ng-click="par(6)">Ga verder.</a>
+</div>
+<div data-show="heeftSchild == 0">
+	<a ng-click="par(2)">Ga verder.</a>
+</div>
+</div>
+
+<div class="par par9">
+U  hoort  een zacht knappend geluid  alsof er  ergens  een  mechanisme  in  werking  wordt  gezet.           U      
+kunt    <a ng-click="par(5)">het   trapportaal    betreden</a>  of     
+<a ng-click="par(11)">eerst de  vloer met  een zwaar voorwerp bekloppen</a>.
+</div>
+
+<div class="par par10">
+U  heeft de sokkel nauwelijks aangeraakt, of u               
+hoort    een   diep  gebrom.     Nu   kunt   u  <a ng-click="par(8)">onverdroten       
+verder  zoeken</a> of  <a ng-click="par(57)">de  zoekactie    opgeven.  In  dat geval  moet  u naar beneden gaan  om 
+het oudje uw falen op te biechten</a>. 
+</div>
+
+<div class="par par11">
+In  de  vloer  van  het  trapportaal  is een  valluik 
+verborgen,  dat plotseling opengaat. Als u erop was 
+gaan   staan,   dan  zou    u  naar  beneden  zijn    gestort 
+<br/><br/>
+<a ng-click="par(13)">Ga verder</a>.
+</div>
+
+<div class="par par12">
+Uw  zoeken  is zonder  resultaat.          U  rolt  ontelbare  kaarten  uit,  maar er  is geen interessante perkamentrol  bij.
+Het enige  overgeblevene is de  sokkel  waarop  de  beer  staat.  U  kunt  <a ng-click="par(10)">hem  voorzichtig 
+betasten</a>  of  u kunt  <a ng-click="par(57)">het       zoeken  opgeven.  In  dat geval moet u naar beneden gaan  om 
+het oudje uw falen op te biechten</a>. 
+</div>
+
+<div class="par par13">
+Het trapportaal is nu een diep gat.  U kunt niet 
+meer  bij  de  deuren  van  de  kamers  komen.  Ik  stel 
+voor  dat u  naar  de  oude vrouw  teruggaat  en  haar 
+om hulp vraagt.
+<br/><br/>
+<a ng-click="par(15)">Ga verder</a>.
+</div>
+
+<div class="par par14">
+U    bevindt  zich    nu  in  kamer  D,    de  geheime 
+kamer van de kapitein (3 x  4 m). 
+<br/>
+<img src="img/par14.png"></img>
+<br/>
+Hier  bewaarde  Grijsbaard  zijn  zeekaarten,  waarmee  een  landrot helaas  weinig  kan  beginnen.  Het              
+meest    opvallende    in  de   kamer    is  een  reusachtig       
+opgezette  bruine  beer.  De  beer  staat op  zijn  achterpoten en houdt de voorpoten strijdlustig vooruit 
+gestoken.  Zijn  vel glanst als zijde  en  de kleine ogen           
+fonkelen geniepig. Het roofdier staat op een kleine                
+vierkante    sokkel waar  iemand  met        krijt de  woorden 'erger mij niet' op heeft gekrabbeld. U kunt <a ng-click="par(12)">de                
+kamer  grondig  onderzoeken,          waarbij  u  er  op  let 
+niet aan de beer te komen</a> of <a ng-click="par(8)">u geeft 
+het  dier  met  uw  wapen  een  por  in  zijn  zij</a>.
+<br/>
+<img src="img/par14_ergermeniet.png"></img>
+</div>
+
+<div class="par par15">
+De oude vrouw  kijkt u afkeurend aan en zegt:                   
+'Dat  begint    al  goed,  vriend!'  Ze  fronst    het  voorhoofd.    'Ik weet  niet  of  ik  je  eigenlijk wel zal  helpen.   
+Iemand     die  het  niet  alleen  aankan,  mag  de 
+kamer    normaal     gesproken  helemaal       niet  binnenkomen.     Maar  voor     deze   keer  zal  ik  je  probleem 
+nog uit de wereld helpen.' 
+Ze  kruist  haar  armen voor  de  borst,  sluit  de  ogen 
+en  knikt  een keer heftig  met haar hoofd.         'Het valluik  is  weer  dicht.   Je  kunt  nu   zonder  gevaar  het 
+trapportaal betreden.  Of ik je een tweede  keer zal 
+helpen,  weet ik nog  niet.  Dus, denk goed  na voordat je nog  eens bij me komt!' 
+<br/><br/>
+<a ng-click="par(17, 'aantalKeerGeholpen')">U kunt nu de trap weer op</a>. 
+</div>
+
+<div class="par par16">
+Nauwelijks heeft u 'Sesam, open u' gezegd,  of 
+daar klapt  in het  midden  de  lambrizering open en 
+komt er een doorgang naar de volgende kamer vrij. 
+U gaat door deze opening.
+<br/><br/>
+<a ng-click="par(14)">Ga verder</a>.
+</div>
+
+<div class="par par17">
+<img src="img/par17.png"><br/>
+U  staat in het 2  x    1 m grote trapportaal.  Drie 
+gesloten    deuren    leiden   naar   de  kamers.    U   kunt 
+proberen  de  deuren open te maken:
+<ul>
+	<li><a ng-click="par(19)">Oostelijke deur</a></li>
+	<li><a ng-click="par(51)">Westelijk deur</a></li>
+	<li><a ng-click="par(29)">Noordelijke deur</a></li>
+</ul>
+</div>
+
+<div class="par par18">
+Om de  geheime deur te  kunnen openen, moet         
+men  de spreuk kennen,  die  de kapitein  op  een papiertje   heeft  genoteerd.
+<div data-show="spreukGevonden > 0">
+	U kent de spreuk en spreekt hem uit.
+	<br/><br/>
+	<a ng-click="par(16)">Ga verder.</a>
+</div>
+<div data-show="spreukGevonden == 0">
+	U kent de spreuk niet.
+	<br/><br/>
+	<a ng-click="par(56)">Ga verder.</a>
+</div>
+</div>
+
+<div class="par par19">
+De    deur   is massief   en  versterkt   met   ijzerbeslag.  Hij  is dicht en  er  zit  geen  sleutel in. 
+<div data-show="sleutelsGevonden > 0">
+	U heeft een sleutel, die kunt  u  <a ng-click="par(36)">proberen</a>.
+</div>
+<div data-show="sleutelsGevonden == 0">
+	Als  u  de  oude  vrouw   om  de  sleutel wilt  vragen,   <a ng-click="par(21)">gaat  u naar  haar  toe</a>.
+</div>
+U kunt ook  <a ng-click="par(51)">de  westelijke   
+deur</a> of <a ng-click="par(29)">de  noordelijke  deur</a> proberen.  Want het is onmogelijk om  de         
+oostelijke deur met geweld te openen.
+</div>
+
+<div class="par par20">
+De op de  grond liggende demon lost op in een          
+groene nevel  die  naar de  lijst van  de  spiegel trekt.  
+Ook  de    scherven  van    de  spiegel  verdampen;     zij
+stijgen   op  en  vormen    samen    weer   een  lijst. Al 
+spoedig ziet  de  spiegel er weer net zo  uit  als daarvoor:  blind,  maar geheel onbeschadigd.  Op de ruit       
+verschijnt    evenwel    een  tekst:  'Gefeliciteerd!   Je 
+bent  een  dappere  strijder.  Daarom  geef ik  je  een    
+tip: het  perkament  ligt  achter  de  geheime  deur  in   
+de  slaapkamer  van     de  kapitein   (kamer  C).   Daar  
+staat, op een sokkel, een beer. Maar de beer is niet       
+opgezet; alleen betoverd.      Je moet hem  met je  wapen   proberen    te  verwonden.     
+Hij  zal  wel  terugslaan,  maar  er  is  geen  andere  manier  om     bij het 
+perkament     te  komen,    want   het  zit in de  sokkel  
+verstopt.  Veel geluk en het ga je goed!'                  
+De  tekst   op  de  spiegel  verdwijnt.   U  kunt   nu  
+<ul>
+	<li><a ng-click="par(17)">de kamer verlaten</a></li>
+	<div data-show="uitFlesGedronken == 0"><li><a ng-click="par(30, 'uitFlesGedronken');restoreHP()">uit de gouden fles drinken</a></li>
+	<li><a ng-click="par(32, 'spreukGevonden')">de  kamer    van Grijsbaard zorgvuldig onderzoeken</a>.</li>
+</ul>
+</div>
+
+<div class="par par21">
+	<div data-show="aantalKeerGeholpen == 0">
+		U vraagt de oude vrouw voor de eerste keer om hulp.
+		<br/><br/>
+		<a ng-click="par(27)">Ga verder.</a>
+	</div>
+	<div data-show="aantalKeerGeholpen > 0">
+		U vraagt de oude vrouw voor de tweede of de derde keer om hulp.
+		<br/><br/>
+		<a ng-click="par(23)">Ga verder.</a>
+	</div>
+</div>
+
+<div class="par par22">
+Nauwelijks heeft u het glas van de spiegel aangeraakt  of daar  springt  het  kapot  en  er verschijnt 
+ een demon.  In  de  rechterhand heeft hij  een wapen 
+ dat  op  het  uwe   lijkt. En   het  lijkt wel  alsof  het 
+ creatuur uw  gelaatstrekken heeft.      'Dat is ook zo,' 
+zegt   het  merkwaardige      wezen.   'Ik  ben  je  evenbeeld,   maar  dat  betekent    absoluut  niet   dat  ik je 
+ ook  aardig vind.   Ik  ga juist  proberen je  te doden, 
+want  dat  is  mijn  plicht. En  ik  ben  de  enige  in  de 
+hele  wereld    die weet  hoe  je  bij  de perkamentrol 
+moet  komen.      Maar  dat  vertel  ik  je  pas  als  je  mij 
+hebt weten te overwinnen.' 
+U   vecht   nu  tegen   de  demon.   Hij  heeft dezelfde 
+gevechtsscores  als  u  (aanval:    11/afweer:  8).  Als  u 
+dus  met  een  knuppel  bent  gewapend,       dobbelt  de 
+demon ook met een worp plus  toeslag  (2 punten). 
+Heeft u een mes,  dan zwaait de  demon er  ook met 
+eentje (1 D  + 3).  De  demon geeft de eerste klap.  U 
+heeft  evenwel  het  magische  schild.     Dat  betekent: 
+wanneer  de  demon  trefpunten  tegen  u  haalt,  blijven  tot  4  punten  in  het  schild  steken,  en  worden 
+dus niet van uw levenspunten afgetrokken.  Bovendien   moet   de  demon    voor   iedere  ronde   met   de 
+dobbelsteen  gooien.     Gooit  hij  een  6,  dan  valt hij 
+ter  plekke  dood.   (De demon  heeft  net  zo  veel  levenspunten     als  u op  dit  moment    heeft.)  
+<fight win-par="20" lose-par="41">
+	<enemy name="de demon" special="mirrorDemon"></enemy>
+</fight>
+</div>
+
+<div class="par par23">
+De oude vrouw  is boos.  'Van jou        had  ik meer
+verwacht,'    spot  ze. 'Als  ik  de sleutel  had  gehad,
+dan had  ik hem je  vanzelfsprekend gegeven.' 
+<br/><br/>
+<a ng-click="par(25)">Ga verder.</a>           
+</div>
+
+<div class="par par24">
+Nauwelijks     heeft  u  de  spiegel  aangeraakt  of    
+daar  springt  het   glas. Een  demon  komt  te     voorschijn,  hij glipt  u  voorbij,  pakt  een  schild  van  de  
+muur    en  hangt   dat  over   zijn linkerarm.   In  zijn   
+rechterhand heeft het wezen  een wapen  dat  op  dat         
+van   u  lijkt. En  het  komt   u  voor   dat  de  demon     
+dezelfde gelaatstrekken heeft als u.  'Dat is ook zo,'       
+zegt  het   merkwaardige     wezen.    'Ik  ben  je evenbeeld.  Ik  ga  je nu  doden, want dat is mijn taak.  En     
+daarbij   ben  ik  de  enige  die  weet,  hoe  je  bij  de   
+perkamentrol kunt komen. Maar dat zeg ik pas,  als           
+je  mij hebt overwonnen.'                                    
+Strijd nu,  volgens de  bekende regels,  de  strijd.  De     
+demon heeft dezelfde gevechtsscores als u (aanval:           
+l1/afweer: 8).  Als u dus een knuppel heeft (1D +2),         
+gooit de demon een steen en telt er een 2 bij op.  Als        
+u een groot mes  heeft (1 D + 3),  heeft de  demon er         
+ook een.  Maar helaas is de  demon in het bezit van           
+een schild, en u niet!                                        
+Voor  het gevecht betekent  dat:  als  u in  een ronde        
+trefpunten  tegen  de    demon  behaalt,    blijven  tot  4    
+punten  in  het  schild van  de  demon steken.  Slechts       
+trefpunten  die   boven  de  4  komen  worden  van  de        
+levensenergie  van    de  demon  afgetrokken.  De  demon staan dus net zoveel levenspunten ter beschikking,
+als u op het ogenblik heeft.<br/>
+<br/>
+Gevechtsvoorbeeld: u  dobbelt  om  een  aanval:  een          
+9.  Een succesvolle worp.  De afweer van  de  demon           
+mislukt.  U  gooit nu  om  de  trefpunten van  uw  wapen.  Laten we  aannemen dat het gezamenlijke resultaat een 7 is. 
+Van de 7 trefpunten blijven er 4 in         
+het  magische    schild  van   de  demon    steken.   Dan     
+worden er dus maar 3 trefpunten van de  levenspunten  van   de  demon  afgetrokken.
+<fight win-par="20" lose-par="41">
+	<enemy name="de demon" type="mirror_demon" armor-name-prefix="het" armor-name="schild" armor-ap="4"></enemy>
+</fight>
+</div>
+
+<div class="par par25">
+'Het heeft  geen  zin  verder  te  gaan  met  jou,'
+gaat  de oude voort.     'Ga heen  en  stuur me  iemand
+die  uit het goede avonturiershout is gesneden!'<br/>
+<br/>
+U  heeft gehoord wat  de  oude vrouw zei:  'Ga heen 
+en kom als iemand anders weer terug.' Bedenk dus 
+een nieuwe  naam  voor  uzelf,      rust  deze  avonturier 
+uit  met  de  scores van  Alrik  en  stort u  opnieuw in 
+het  avontuur!    Dat  betekent  dat  u  weer  bij   het begin  begint.  Alle  deuren  zijn  weer   dicht,  alle
+schatten liggen weer op  hun plaats en  alle valstrikken zijn weer klaar.  Het is echter niet nodig dat de 
+nieuwe  avonturier zich  van  de  domme houdt.         Hij 
+kan zeker teruggrijpen naar de ervaringen van  zijn 
+voorganger.  We      kunnen  gevoeglijk    aannemen  dat 
+Alrik   hem    over  zijn  ervaringen   in  het  huis  van 
+Grijsbaard zal hebben verteld.<br/>
+<br/>
+<a href="index.html">Ga verder om het avontuur opnieuw te beginnen.</a>
+</div>
+
+<div class="par par26">
+	<div data-show="heeftSchild > 0">
+	U  heeft het  schild  al  omgehangen  voor  u 
+	de  spiegel begint  af te  vegen.
+	<br/><br/>
+	<a ng-click="par(22)">Ga verder.</a>
+	</div>
+
+	<div data-show="heeftSchild == 0">
+	Het schild hangt nog aan de muur.
+	<br/><br/>
+	<a ng-click="par(24)">Ga verder.</a>
+	</div>
+</div>
+
+<div class="par par27">
+De    oude   vrouw    kan  weinig   begrip  voor  uw 
+verzoek  opbrengen.      'Als  ik  had  geweten  waar  de 
+sleutel  was,  dan  had   ik  hem  je  wel  gegeven.   Ga 
+maar weer naar boven en zoek verder.  Verder verzoek  ik  je om  me    niet  met  kleinigheden   lastig te 
+vallen.   Als  echte   avonturier  moet  je    zelfstandig 
+kunnen handelen, anders kom je niet ver.'            
+<br/><br/>
+<a ng-click="par(17, 'aantalKeerGeholpen')">U gaat nu terug naar het trapportaal.</a>
+</div>
+
+<div class="par par28">
+Als     u  het  schild  over   uw  linkerarm    hangt,    
+merkt  u  dat  het  een  magisch  voorwerp  is.  Op  onverklaarbare     wijze  wordt   het  u  ineens  duidelijk,   
+welke krachten erin schuilen,                                 
+De   rode   doodskop     op  het  schild  is  een machtig     
+voodoo-teken. Een tegenstander die er te lang naar            
+kijkt,  is  ten  dode   opgeschreven.    (Voor  het   spel    
+betekent  dat:    als  u  tijdens  een  gevecht het  schild   
+draagt, moet uw tegenstander voor iedere gevechts-            
+ronde een keer met de zeszijdige dobbelsteen gooi-            
+en.  Gooit hij  een 6,  dan  stort hij  onmiddellijk ter      
+aarde.)  Bovendien behoedt  het  toverschild  u voor          
+de  slagen van  uw tegenstander.  Als die  u een rake         
+klap geeft blijven 4 trefpunten in het schild steken.         
+Voorbeeld: uw tegenstander dobbelt voor  een aan-             
+val,  die  lukt, uw afweer blijft  echter zonder succes.      
+Uw    tegenstander  dobbelt  voor  de  trefpunten  van        
+zijn wapen.  Laten we  aannemen dat  hij een groot            
+mes bezit (1 D + 3). Hij gooit een 4, telt de toeslag er          
+bij  op, een 3, en krijgt een totaal van 7 trefpunten.        
+Normaal gesproken zouden die 7 trefpunten van uw             
+levensenergie worden afgetrokken, maar 4 trefpunten bleven in het schild steken. U hoeft dus slechts 3        
+trefpunten van uw levenspunten af te trekken.<br/>
+<br/>
+Nu kunt u
+<ul>
+	<div data-show="uitFlesGedronken == 0"><li><a ng-click="par(30, 'uitFlesGedronken');restoreHP()">uit het flesje drinken</a></li></div>
+	<div data-show="overSpiegelGewreven == 0"><li><a ng-click="par(26, 'overSpiegelGewreven')">over de spiegel wrijven</a></li></div>
+	<li><a ng-click="par(32, 'spreukGevonden')">de kamer verder onderzoeken</a></li>
+	<li><a ng-click="par(17)">de kamer weer verlaten</a></li>
+</ul>
+</div>
+
+<div class="par par29">
+De noordelijke  deur is niet op slot.  Erachter is      
+een kleine kamer (kamer B),  die 2  x 2 meter groot          
+is.                                                          
+<br/>
+<img src="img/par29.png"></img>
+<br/>
+In  de  noordelijke    muur  is  een  klein  raam.   In  de   
+kamer staan een tafel,     een  stoel  en  een grote zeemans kist.  U  kunt   <a ng-click="par(17)">de  kamer  weer  verlaten</a>
+of  <a ng-click="par(31)">de  kist  nader onderzoeken</a>.                                                         
+<br/>
+<img src="img/par29_kamer.png"></img>
+</div>
+
+<div class="par par30">
+De    fles bevat   een  magische    geneeskrachtige  
+drank.    Als  u  ervan  drinkt,  genezen  onmiddellijk   
+aile wonden,  die  u tot  dusver werden toegebracht.      
+Dat betekent dat uw levensenergie weer terug is op        
+30.  U  kunt nu 
+<ul>
+	<div data-show="heeftSchild == 0"><li><a ng-click="par(28, 'heeftSchild');armor('het', 'voodoo schild', 4, 'voodooSchild')">het schild omhangen</a></li></div>
+	<div data-show="overSpiegelGewreven == 0"><li><a ng-click="par(26, 'overSpiegelGewreven')">over de spiegel wrijven</a></li></div>
+	<li><a ng-click="par(32, 'spreukGevonden')">de  kamer verder doorzoeken</a></li>
+	<li><a ng-click="par(17)">of de kamer weer verlaten.</a></li> 
+</ul>
+</div>
+
+<div class="par par31">
+De zeemanskist is 1,60 meter lang, 80 centimeter breed en 80 centimeter hoog.  
+Het deksel is afgesloten met een zwaar hangslot.  U kunt
+<ul>
+	<div data-show="sleutelsGevonden > 0"><li><a ng-click="par(37)">de kleine sleutel proberen</a></li></div>
+	<li><a ng-click="par(33)">proberen het slot er met uw wapen af te slaan</a></li>
+	<li><a ng-click="par(17)">de kamer weer verlaten</a></li>
+</ul>
+</div>
+
+<div class="par par32">
+De  zoekactie  heeft  vooralsnog weinig succes, 
+maar dan ontdekt u in een schuifla van de werktafel 
+twee papiertjes waarop Grijsbaard een spreuk heeft 
+geschreven. Op het ene papier staat: 'Eidiedeldum- 
+daai, vertrouw geen papegaai! Eerst het schild, dan 
+de spiegel en dan de drank, anders leef je niet lang.' 
+(Grijsbaard was zeeman, geen dichter!) Op  het an- 
+dere papier staat:  'Geheime deur opent zich nu bij 
+een luid  "Sesam, open u!"<br/>
+<br/>
+U kunt nu:
+<ul>
+	<div data-show="uitFlesGedronken == 0"><li><a ng-click="par(30, 'uitFlesGedronken');restoreHP()">uit het flesje drinken</a></li></div>
+	<div data-show="overSpiegelGewreven == 0"><li><a ng-click="par(26, 'overSpiegelGewreven')">over de  spiegel  wrijven</a></li></div>
+	<div data-show="heeftSchild == 0"><li><a ng-click="par(28, 'heeftSchild');armor('het', 'voodoo schild', 4, 'voodooSchild')">het schild omhangen</a></li></div>
+	<li><a ng-click="par(17)">de kamer weer verlaten</a></li>
+</ul>
+</div>
+
+<div class="par par33">
+Om het  slot  eraf te  krijgen,  moet  u het  eerst      
+een keer  treffen.   U  gooit voor  uw  aanval  met  de       
+twintigzijdige dobbelsteen  (hoogstens een  11). Als          
+de  aanval  lukt,  gooit  u  met  de  zeszijdige  dobbelsteen  de  trefpunten    (resultaat  van   de  worp   plus    
+toeslag).  Als  u  met een klap  6 trefpunten  behaalt,       
+opent het  slot  zich.  Na iedere vergeefse poging  tot       
+openen (aanval mislukt of niet genoeg trefpunten)             
+gooit u  een zeszijdige dobbelsteen. Bij  een  1 is uw        
+wapen op de kist afgebroken. U kunt het  avontuur             
+zonder wapens voortzetten. Dan vecht u verder met             
+uw blote handen. Dat betekent dat u hoogstens een             
+7 mag gooien om succesvol te kunnen aanvallen. U               
+heeft  geen  mogelijkheid  tot  afweer.     Om   uw  trefpunten voor een vuistslag vast te  stellen, rolt u met        
+een zeszijdige  dobbelsteen en  trekt u  een 2 af van        
+het  resultaat.  U  kunt  dus  hoogstens  4  trefpunten       
+bereiken;  als  u een  1 of een 2 gooit,  krijgt  u geen      
+trefpunten.
+<attack-lock>
+	<lock-opened>
+		<div class="positiveResult">
+			U heeft het slot er af geslagen, <a ng-click="par(35)">ga verder</a>.
+		</div>
+	</lock-opened>
+	<weapon-broken>
+		<div class="negativeResult">
+			U heeft uw wapen kapot geslagen. U kunt <a ng-click="par(17)">de kamer verlaten</a> of
+			<span data-show="aantalKeerWapenGevraagd == 0"><a ng-click="par(49, 'aantalKeerWapenGevraagd')">teruggaan naar de oude vrouw</a></span>
+			<span data-show="aantalKeerWapenGevraagd > 0"><a ng-click="par(47, 'aantalKeerWapenGevraagd')">teruggaan naar de oude vrouw</a></span>
+			om haar hulp in te roepen.
+		</div>
+	</weapon-broken>
+</attack-lock>
+</div>
+
+<div class="par par34">
+<img src="img/par34.png"></img>
+<br/>
+U  staat in kamer A  (6 m lang, 4 m breed),  de 
+werkkamer van Grijsbaard. De kamer staat vol met 
+waardevolle dingen en curiosa, die de kapitein van 
+zijn reizen heeft meegenomen.  Aan de muur hangt 
+een zwart  schild  beschilderd  met  een  rode  doodskop op een gouden fond. 
+Verder staat er een manshoge spiegel met een schitterend versierde lijst.
+Bovendien ontdekt u een gouden flesje,  dat op  een commode staat.  Als u in het 
+midden van  de  kamer  staat, hoort u plotseling een 
+heleboel   stemmen  door  elkaar praten.       Het  duurt 
+een tijd je voor u in de gaten heeft dat  het de voorwerpen     in  de  kamer     van  Grijsbaard     zijn,  die
+tegen  u  praten.  De spiegel  roept:    'Wrijf me,  wrijf 
+me!'  Het schild:   'Hang me  om,  hang  me  om!' Het 
+fles je:  'Drink me,  drink me!' 
+Dan    klinkt  een   doordringende,     krassende    stem: 
+'Hou je  mond!  En wel onmiddellijk!' U draait zich 
+om en ziet dat de stem afkomstig is van een opgezette papagaai:  'Jullie brengen onze gast helemaal van 
+de kook! Zo, kereltje, nu moet je eerst eens even uit 
+het  flesje  drinken,  dan  over de  spiegel wrijven  en 
+daarna   het  schild  omhangen.     Denk  aan    de  volgorde, want die is belangrijk! En haast je een beetje; 
+je  hebt al veel te veel tijd verknoeid!'
+Dan houdt de papegaai z'n snavel en keert de stilte    
+terug in de kamer.  U kunt nu
+<ul>
+	<div data-show="uitFlesGedronken == 0"><li><a ng-click="par(30, 'uitFlesGedronken');restoreHP()">uit het flesje drinken</a></li></div>
+	<div data-show="overSpiegelGewreven == 0"><li><a ng-click="par(26, 'overSpiegelGewreven')">over de  spiegel  wrijven</a></li></div>
+	<div data-show="heeftSchild == 0"><li><a ng-click="par(28, 'heeftSchild');armor('het', 'voodoo schild', 4, 'voodooSchild')">het schild omhangen</a></li></div>
+	<li><a ng-click="par(32, 'spreukGevonden')">de kamer verder onderzoeken</a></li>
+	<li><a ng-click="par(17)">de kamer weer verlaten</a></li>
+<br/>
+<img src="img/par34_kamer.png"></img>
+</div>
+
+<div class="par par35">
+Het slot springt open en u kunt het  deksel van
+de  kist afhalen. <a ng-click="par(39)">Ga verder</a>.
+</div>
+
+<div class="par par36">
+Een  van     de  grootste  sleutels   past.  Hij  draait 
+makkelijk  in    het  slot.  U  kunt  <a ng-click="par(34)">de  deur  openen  en 
+naar binnen gaan</a>.
+</div>
+
+<div class="par par37">
+De  kleine  sleutel past      in  het hangslot.   <a ng-click="par35">Draai hem om</a>. 
+</div>
+
+<div class="par par38">
+<img src="img/par38.png"></img><br/>
+U    heeft  een  stel  ratten   opgeschrikt.</br>
+<!-- Later misschien:
+U  gooit 
+met een zeszijdige dobbelsteen (resultaat + 2 =           het 
+aantal aanvallende ratten).  -->
+Gevechtsscore rat:  aanval: 5,  afweer: -, trefpunten: 2, levensenergie: 3. 
+De ratten beginnen het gevecht. De een na de ander 
+dobbelt  voor  zijn     aanval.   Uzelf   heeft  slechts  een 
+keer per ronde  de  mogelijkheid  tot  afweer,  u      kunt 
+dus   hoogstens     de  beet   van  een  rat   verhinderen. 
+Iedere  keer  als  de  rat  met  een  aanval of een beet 
+succes heeft, moet u 2 punten van uw levensenergie 
+aftrekken. Als alle ratten hun aanval hebben uitgevoerd,  bent u met uw aanval aan  de beurt.  U gooit 
+een keer met  de  twintigzijdige  dobbelsteen  (hoogstens een 11). Als uw aanval lukt, is er een rat dood. 
+De  ratten  hebben  namelijk  geen  mogelijkheid  tot 
+afweer en hun levensenergie staat op zo'n laag pitje, 
+dat iedere klap dodelijk is.<br/>
+<br/>
+Gevechtsvoorbeeld: Alrik tegen zes ratten: <br/>
+<br/>
+1e ronde 
+<br/>
+Rat A gooit een aanval: mislukt! <br/>
+Rat B  gooit  een  aanval:  gelukt!  Uw  afweer  is ook succesvol.<br/>
+Rat C gooit een aanval: mislukt!<br/>
+Rat  D  gooit  een aanval:  gelukt!  2 trefpunten worden van de  levensenergie van Alrik afgetrokken.<br/>
+Rat E gooit een aanval:  mislukt!<br/>
+Rat F gooit een aanval:  gelukt! Er worden nog eens 2 levenspunten van de levensenergie van Alrik afgetrokken.<br/>
+U  gooit  een  aanval:   gelukt!  Rat A  is dood.  (In  de volgende ronde heeft u nog 5 ratten tegenover u.)<br/>
+<br/>
+2e ronde<br/>
+Rat B gooit een aanval:  mislukt!<br/>
+Rat C gooit een aanval: mislukt, enz.<br/>
+<br/>
+<fight win-par="59" lose-par="41">
+	<enemy name="rat 1" hp="1" attack="5" defence="0" weapon-name="tanden" weapon-dice="0" weapon-modifier="2"></enemy>
+	<enemy name="rat 2" hp="1" attack="5" defence="0" weapon-name="tanden" weapon-dice="0" weapon-modifier="2"></enemy>
+	<enemy name="rat 3" hp="1" attack="5" defence="0" weapon-name="tanden" weapon-dice="0" weapon-modifier="2"></enemy>
+	<enemy name="rat 4" hp="1" attack="5" defence="0" weapon-name="tanden" weapon-dice="0" weapon-modifier="2"></enemy>
+	<enemy name="rat 5" hp="1" attack="5" defence="0" weapon-name="tanden" weapon-dice="0" weapon-modifier="2"></enemy>
+	<enemy name="rat 6" hp="1" attack="5" defence="0" weapon-name="tanden" weapon-dice="0" weapon-modifier="2"></enemy>
+</fight>
+</div>
+
+<div class="par par39">
+U     doet  de  zeemanskist  open  en  er  blinken  u
+honderd zilveren daalders en vijftien gouden dukaten  tegemoet.     Bovendien  liggen  er     op  de  bodem 
+van  de  kist twee  vingerlange gouden figuurtjes,  die 
+twee  krijgers  in  een  gevecht  voorstellen.  Ieder  figuurtje   is  ook  nog    eens  vijftien  dukaten  waard. 
+Helaas  wordt  de  schat  door  een  scheepskabouter 
+bewaakt;     hij  valt  u  driftig  aan. Het  kleine  gerimpelde  manneke  ziet  er  niet  buitengewoon  gevaarlijk  uit, te meer  daar  hij  maar  een  kleine  nietige 
+dolk in zijn verschrompelde hand houdt. 
+Maar wees 
+op uw  hoede!  De dolk  van de scheepskabouter bezit  een  griezelige  magische  kracht.  Als  de  spinnijdige  schurk  u  met  de  punt  van  z'n  dolk     treft  (als 
+hem  een  aanval  lukt  en  uw afweer  faalt),  kan  het 
+gebeuren dat u in een klein gouden figuurtje wordt 
+veranderd.  U  gooit na  iedere gelukte- en niet gepareerde-aanval         van   de   scheepskabouter,      met 
+een  zeszijdige    dobbelsteen.     Het  resultaat   trekt  u 
+als trefpunten van uw levensenergie af. 
+Gooit u  echter een  1, dan wordt u onmiddellijk in 
+een  beeldje  veranderd.
+<!-- TODO
+De scheepskabouter begint het gevecht. 
+-->
+<fight win-par="60" lose-par="41">
+	<enemy name="de scheepskabouter" hp="15" attack="8" defence="6" weapon-name="magische dolk" weapon-dice="1" weapon-special="minimizeDagger"></enemy>
+</fight>
+<br/>
+<img src="img/par39.png"></img>
+</div>
+
+<div class="par par40">
+U  bent   pijnlijk  gebeten. Trek  2  punten   van
+uw levensenergie af en <a ng-click="par(38);dmg(2)">ga verder</a>.
+</div>
+
+<div class="par par41">
+In  een normaal,  hard Oog des Meesters-avontuur zou men u op dit ogenblik met een  paar woorden van  deelneming condoleren met  uw vroegtijdige  overlijden,  maar in dit proefspel is alles anders.<br/>
+<a ng-click="par(43)">Ga verder.</a>
+</div>
+
+<div class="par par42">
+De kist  is leeg.  Bovendien moet u helaas vaststellen  dat  hij geen  bodem    heeft.  U  kunt  nu  de 
+opening in de bodem of <a ng-click="par(40)">met de hand  betasten</a>   of <a ng-click="par(38)">met   uw  wapen</a>.  U     
+heeft nu  ook de  mogelijkheid <a ng-click="par(54)">het bed  te onderzoeken</a>  of  <a ng-click="par(17)">de  kamer  weer  te  verlaten</a>.
+</div>
+
+<div class="par par43">
+Plotseling komt er licht in de duisternis. U ziet        
+een stralend blond meisje staan en  u vraagt zich al        
+af  of dit  soms  de  hemel  is,  maar  het  bovenaardse 
+zwijgen  wordt verstoord door de hese  stem van  de 
+oude vrouw:     'Mijn vriend,   dit  avontuurlijke  leven    
+is te  hard voor jou.  Maar wij hebben je weer in het        
+leven  geroepen  en    dat  was  heel moeilijk.  Helaas      
+heb  ik  je  nu  iets  heel  akeligs  mee  te  delen.'<br/>
+<a ng-click="par(25)">Ga verder</a>.
+</div>
+
+<div class="par par44">
+Als  u de  kist  optilt,  hij  is 80 centimeter lang,  
+50  centimeter breed  en  40 centimeter hoog,  maar          
+verrassend  licht,  ontdekt u  een  opening in  de  bodem. U  kunt nu  <a ng-click="par(42)">de kist  openbreken</a>
+of de  opening in de  bodem  aftasten,  ofwel  <a ng-click="par(40)">met  de       
+hand</a>,   ofwel  <a ng-click="par(38)">met   uw  wapen</a>.
+</div>
+
+<div class="par par45">
+<!-- Niet meer nodig, opgelost in paragraaf 33 -->
+</div>
+
+<div class="par par46">
+De    kast  is  makkelijk  te openen.    Er  hangen
+oude kledingstukken in.  Op  de bodem van  de kast
+staan een paar laarzen en  het grote mes van  Grijsbaard ligt er ook. Als  u wilt kunt u
+<a ng-click="weapon('groot mes', 1, 3)">het  ruilen tegen uw wapen.</a>  
+Het lijkt sprekend op het model wapen van  Eenoog  (trefpunten:     1D  +  3).  U  mag  echter 
+niet  twee  wapens  tegelijkertijd gebruiken.  Bovendien   staat op  de  bodem    van  de  kast  een  grote, 
+houten    kist. U  kunt   <a ng-click="par(44)">de kist  onderzoeken</a>
+  of <a ng-click="par(54)">naar het bed toedraaien</a>
+of <a ng-click="par(17)">weer de kamer uitgaan</a>. 
+</div>
+
+<div class="par par47">
+"Jij  ook  altijd,'  zegt de oude  vrouw   nadat  u 
+haar   van  uw  tegenspoed    op  de  hoogte   heeft gesteld.  'Waar zou  ik  nog  een wapen  vandaan  moeten  halen.  Het  is  hier geen   wapenmagazijn.'    Zij 
+kijkt  u  een ogenblik nadenkend  aan.<br/>
+<a ng-click="par(25)">Ga verder</a>.
+</div>
+
+<div class="par par48">
+U  hoort een zacht geritsel  en  u trekt uw hand 
+terug,  maar  het   is  al  te laat. Een  kleine  gifslang 
+heeft  zich  vastgebeten  in de  muis  van  uw hand.  U 
+gooit  met   de  zeszijdige dobbelsteen    en  trekt het 
+resultaat van uw levenspunten af.  (Als uw constitutie  in de  loop van  het avontuur tot 0 afneemt, bent 
+u  dood.)  
+<damage dice="1" modifier="0">
+	<damage-live>
+		Als  de  slang zijn  gif  heeft  verspreid,  laat  hij u  los. U  kunt  <a ng-click="par(50)">uw  speurtocht zonder gevaar voortzetten</a>.
+	</damage-live>
+	<damage-die>
+		<div class="negativeResult">
+			U bent dood, <a ng-click="par(41)">ga verder</a>.
+		</div>
+	</damage-die>
+</damage>
+</div>
+
+<div class="par par49">
+Nadat u  haar verteld heeft van  uw pech,  kijkt        
+de  oude vrouw u nadenkend aan.  'Zozo ,' mompelt            
+ze  eindelijk, 'je hebt je  wapens  onklaar gemaakt.         
+Ik vraag  me af  waarom  je  niet  meteen  het  grote        
+mes   van  Eenoog    hebt  meegenomen.      Dat  was  in     
+ieder geval beter geweest dan  die  knuppel van je.'         
+Ze  geeft  u  het  wapen.   U  laat het een  paar  keer      
+door de  lucht suizen. Het zware mes ligt goed in de         
+hand.  Als  u met dit wapen een strijd uitvecht, kunt        
+u 4-9  trefpunten  behalen.  Het grote mes  heeft een        
+score  van  1  worp   + 3.  Om   de  trefpunten   uit  te    
+rekenen,  gooit men  een dobbelsteen en  telt  er een        
+3 bij  op.  U  gaat nu  <a ng-click="par(17);weapon('groot mes', 1, 3)">terug naar het  trapportaal</a>.
+</div>
+
+<div class="par par50">
+Onder  het    kussen  vindt  u  een  ring, waaraan  
+een kleine  en  twee  grote sleutels hangen.  De grote  
+passen in de  sloten van de deuren van de oostelijke    
+en  de  westelijke  kamers,    de  kleine lijkt bij een 
+hangslot  te  horen.  U  kunt nu  <a ng-click="par(46, 'sleutelsGevonden')">de  kast  doorzoeken</a>
+of  <a ng-click="par(17, 'sleutelsGevonden')">de kamer  weer  verlaten</a>.
+</div>
+
+<div class="par par51">
+De deur aan  de westkant is gemaakt van massief hout.
+<div data-show="sleutelsGevonden == 0">
+	Hij  is dicht en er is geen  sleutel voorhanden.  
+	U kunt de andere deuren proberen (<a ng-click="par(19)">oostdeur</a>           
+	of <a ng-click="par(29)">noorddeur</a>) of trachten        
+	de deur met de schouders te forceren.  De lichaamskracht  van  Alrik  bedraagt    10.  (Toen  er  om  zijn 
+	eigenschappen  werd  gedobbeld,  kwam  deze  score 
+	er uit.)  Als  u  dus  de  deur wilt openbreken,  rolt  u   
+	de  twintigzijdige  dobbelsteen.    U  mag   hoogstens      
+	een  10 gooien,  dan  lukt  de  krachtproef en  springt     
+	de  deur open.  Als  u meer dan  10 gooit,  is de proef 
+	mislukt.  In dit  geval moet u  1 punt van  uw levensenergie aftrekken,  omdat u uw  schouder heeft gekneusd.  
+	Als  u een tweede  keer tegen  de deur aanbeukt en deze poging mislukt ook, dan moet u nog 
+	twee  punten van  uw levensenergie aftrekken; voor 
+	de  derde poging 3 punten, voor de vierde 4 punten, 
+	enz. 
+	<force-door>
+		<div class="positiveResult">
+			Het is u gelukt de deur te forceren, <a ng-click="par(56)">ga naar binnen</a>.
+		</div>
+	</force-door>
+</div>
+<div data-show="sleutelsGevonden > 0">
+	U heeft een sleutel, u kunt dus <a ng-click="par(56)">naar binnen</a>.
+</div>
+</div>
+
+<div class="par par52">
+U  hoort  een  sissend  geluid. Een  kleine  slang 
+probeert u te bijten, maar hij komt een haarbreedte 
+te  kort.  U  kunt <a ng-click="par(50)">uw zoekactie zonder gevaar voortzetten</a>. 
+</div>
+
+<div class="par par53">
+De  deur  aan  de  west kant  van  het  trapportaal 
+staat nu  open.  U kunt <a ng-click="par(56)">naar binnen gaan</a>
+of <a ng-click="par(17)">in het trapportaal blijven</a>. 
+</div>
+
+<div class="par par54">
+U brengt een behendigheidsproef ten  uitvoer.        
+Dat  betekent:   u  gooit met  de  twintigzijdige  dobbelsteen.  U  mag  hoogstens  een   13 gooien.
+<check>
+	<check-succeeded>De proef is gelukt, <a ng-click="par(52)">ga verder</a>.</check-succeeded>
+	<check-failed>De proef is mislukt, <a ng-click="par(48)">ga verder</a>.</check-failed>
+</check>
+</div>
+
+<div class="par par55">
+Kamer  C    is  blijkbaar  de slaapkamer  van  de
+kapitein.  Want  tegen  de westelijke muur staat een  
+bed en tegen de noordelijke  muur een hoge klerenkast.  U  kunt  <a ng-click="par(54)">het  bed  onderzoeken</a>
+of <a ng-click="par(46)">de  kast</a> of  u kunt <a ng-click="par(17)">de kamer weer  
+verlaten</a>.
+</div>
+
+<div class="par par56">
+<img src="img/par56.png"></img>
+<br/>
+U    betreedt  kamer    C, die  4 m  lang  en  3  m
+breed is. In  het  midden van zowel de westelijke als  
+de noordelijke muur zit een raam.  De muur aan de 
+zuidkant is van vloer tot  plafond voorzien van lambrizering.  De  betimmerde     muur  geeft  de  indruk    
+dat er een geheime deur in verborgen is. 
+U kunt proberen <a ng-click="par(18)">de geheime deur te openen</a> of <a ng-click="par(55)">de kamer verder bekijken</a>.
+<br/>
+<img src="img/par56_kamer.png"></img>
+</div>
+
+<div class="par par57">
+De   oude   vrouw   hoort  uw  verhaal   zwijgend 
+aan.  'Zozo, en op dat punt heb je opgegeven,' zegt 
+ze  uiteindelijk. 'Hoe  kon  je  dat nou  doen?  En  je 
+was  al  zo'n  eind op  weg.  Volgens  mij  had  je  niet 
+naar  die papegaai   moeten  luisteren,   die schooier 
+liegt. Je  had  beter eerst de kamer in alle  rust  kunnen  doorzoeken     ...  Maar  wie  een papegaai   vertrouwt,  zal  het  in deze  duistere  wereld   niet ver 
+brengen ... '  Ze  schudt  nadenkend  haar  hoofd.  Na           
+een  lange  pauze  kijkt  ze op  en  blikt  u recht in de        
+ogen.<br/>
+<a ng-click="par(25)">Ga verder.</a>
+ </div>
+
+<div class="par par58">
+Een   onverwachte    pijnscheut   voert  door  uw            
+lichaam.  Een ogenblik lang lijkt  uw hele omgeving          
+tot  reuze-afmetingen  te groeien; daarna wordt  het         
+u zwart voor de ogen.<br/>
+<a ng-click="par(43)">Ga verder.</a>
+</div>
+
+<div class="par par59">
+U heeft alle ratten verslagen. U kunt nu 
+<a ng-click="par(54)")>het bed aan een onderzoek onderwerpen</a>
+of  <a ng-click="par(17)">de   kamer    weer    verlaten</a>.     
+</div>
+
+<div class="par par60">
+U heeft de kabouter verslagen. U neemt zijn schat mee en <a ng-click="par(17)">verlaat de kamer</a>.
+</div>
+
+</div>	<!-- col adventure text -->
+
+<div class="col-sm-4">
+<div  id="playerStats" style="display: none">
+	<table>
+		<tr>
+			<td colspan="2" class="playerName">{{player.name}}</td>
+		</tr>
+		<tr>
+			<td>Levensenergie:</td><td>{{player.hp}}</td>
+		</tr>
+		<tr>
+			<td>Aanval:</td><td>{{player.attackStat}}</td>
+		</tr>
+		<tr>
+			<td>Afweer:</td><td>{{player.defenceStat}}</td>
+		</tr>
+		<tr>
+			<td>Wapen:</td><td>{{player.weapon.name}}, {{player.weapon.getDamageDescription()}}</td>
+		</tr>
+		<tr>
+			<td>Uitrusting:</td><td>{{player.armor.toString()}}</td>
+		</td>
+	</table>
+</div>
+</div>
+
+</div>	<!-- row -->
+</div>	<!-- container -->
+
+</body>
+</html>
