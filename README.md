@@ -18,4 +18,5 @@ Zie voor voorbeelden [`example.html`](https://github.com/samegens/oogdesmeesters
 
 ## Bugs
 
-De demoon heeft niet hetzelfde wapen als jij als je een ander wapen hebt dan de standaard knuppel.
+- De demoon heeft niet hetzelfde wapen als jij als je een ander wapen hebt dan de standaard knuppel.
+- Laden gaat traag (4 seconden op Azure).
