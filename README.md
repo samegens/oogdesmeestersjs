@@ -10,7 +10,7 @@ Bevat een framework om zelf soortgelijke avonturen mee te bouwen.
 Helaas werkt het niet goed als je simpelweg `index.html` opent in een browser. Je hebt echt een webserver(tje) nodig. 
 Ik heb daar zelf [TinyWeb](https://www.ritlabs.com/en/products/tinyweb/) voor gebruikt. 
 
-Er draait een versie van dit avontuur op [Azure](https://cloud.google.com/appengine/?hl=nl), zie [http://oogdesmeesters.azurewebsites.net](http://oogdesmeesters.azurewebsites.net/), deze versie is niet altijd de laatste.
+Er draait een versie van dit avontuur op [Azure](https://azure.microsoft.com/), zie [http://oogdesmeesters.azurewebsites.net](http://oogdesmeesters.azurewebsites.net/), deze versie is niet altijd de laatste.
 
 ## Zelf avonturen maken
 
