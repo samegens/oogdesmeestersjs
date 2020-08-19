@@ -20,3 +20,4 @@ Zie voor voorbeelden [`example.html`](https://github.com/samegens/oogdesmeesters
 
 - De demoon heeft niet hetzelfde wapen als jij als je een ander wapen hebt dan de standaard knuppel.
 - Laden gaat traag (4 seconden op Azure).
+- Er is een link die niet werkt, moet nog proberen te reproduceren.
